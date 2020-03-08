@@ -159,7 +159,7 @@ MonoBehaviour:
   pauseButton: {fileID: 1440044714}
   pauseMenu: {fileID: 1126256246}
   monster: {fileID: 1164413597}
-  targetRay: {fileID: 0}
+  targetRay: {fileID: 123234573}
 --- !u!4 &100958697
 Transform:
   m_ObjectHideFlags: 0
