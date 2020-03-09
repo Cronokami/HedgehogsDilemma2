@@ -31,7 +31,7 @@ public class CarMovement : MonoBehaviour
 
 		if (collision.CompareTag("Monstro"))
 		{
-
+			collision.SendMessage("Derrota");
 
 		}
 
