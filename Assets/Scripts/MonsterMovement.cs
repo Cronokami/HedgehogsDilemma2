@@ -13,7 +13,17 @@ public class MonsterMovement : MonoBehaviour
 	public Material start;
 	public Material pause;
 
-	private void Update()
+    public int qualFase;
+
+    public IndicadorFinal seta;
+
+    private void Start()
+    {
+        qualFase = 0;
+    }
+
+
+    private void Update()
 	{
 
 		start.color = new Vector4(start.color.r, start.color.g, start.color.b, Mathf.Lerp(start.color.a, 0, 0.2f));
@@ -60,7 +70,6 @@ public class MonsterMovement : MonoBehaviour
 	public void Vitoria()
 	{
 		SceneManager.LoadScene("Vitoria");
-
 	}
 
 
@@ -68,4 +77,16 @@ public class MonsterMovement : MonoBehaviour
 	{
 		agent.SetDestination(transform.position);
 	}
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ProxFase"))
+        {
+            qualFase++;
+            seta.currentFase = qualFase;
+            seta.objetivos[seta.currentFase].SetActive(true);
+            other.gameObject.SetActive(false);
+        }
+    }
 }
