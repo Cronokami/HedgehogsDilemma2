@@ -12,9 +12,19 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject help;
     public GameObject buttonsLayout;
 
+    public GameObject[] cutscene;
+
+    public int qualImagem;
+
+
+    private void Start()
+    {
+        qualImagem = 0;
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(StartGameCutscene());
     }
 
     public void HelpButton()
@@ -49,5 +59,20 @@ public class MenuPrincipal : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+
+    IEnumerator StartGameCutscene()
+    {
+        cutscene[qualImagem].SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        cutscene[qualImagem].SetActive(false);
+        qualImagem++;
+        cutscene[qualImagem].SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(1);
+
+
+
     }
 }
