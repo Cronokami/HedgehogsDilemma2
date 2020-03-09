@@ -85,7 +85,14 @@ public class MonsterMovement : MonoBehaviour
         {
             qualFase++;
             seta.currentFase = qualFase;
-            seta.objetivos[seta.currentFase].SetActive(true);
+            if(seta.currentFase <= 1)
+            {
+                seta.objetivos[seta.currentFase].SetActive(true);
+            }
+            else if (seta.currentFase >= 2)
+            {
+                Vitoria();
+            }
             other.gameObject.SetActive(false);
         }
     }

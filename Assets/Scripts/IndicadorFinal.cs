@@ -11,7 +11,6 @@ public class IndicadorFinal : MonoBehaviour
 
     public GameObject[] objetivos;
 
-
     private void Start()
     {
         currentFase = 0;
@@ -19,12 +18,10 @@ public class IndicadorFinal : MonoBehaviour
 
     private void Update()
     {
-        apontarSeta();
-    }
+
+        Vector3 teste = Vector3.Lerp(seta.transform.position, objetivos[currentFase].transform.position, 0.5f);
 
 
-    void apontarSeta()
-    {
-        seta.transform.LookAt(objetivos[currentFase].transform);
+        seta.transform.LookAt(teste);
     }
 }
