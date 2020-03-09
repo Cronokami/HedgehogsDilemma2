@@ -61,11 +61,11 @@ public class MonsterMovement : MonoBehaviour
 	}
 
 
-	public void Derrota()
+	/*public void Derrota()
 	{
 		SceneManager.LoadScene("Derrota");
 
-	}
+	}*/
 
 	public void Vitoria()
 	{

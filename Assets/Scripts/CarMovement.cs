@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CarMovement : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class CarMovement : MonoBehaviour
 
 		if (collision.CompareTag("Monstro"))
 		{
-			collision.SendMessage("Derrota");
+			SceneManager.LoadScene("Derrota");
 
 		}
 
